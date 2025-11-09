@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Capstone Project FAQs</title>
+        <meta charset="UTF-8">
+	<link href="project.css" rel= "stylesheet">
+
+    </head>
+    <body>
+        <a href="#content" class="skip-link>">Skip to main content</a>
+        <div id= "wrapper">
+            <header>
+                <h1>Smile School</h1>
+            </header>
+            <nav>
+                <a href="index.html">Home</a>&nbsp;
+                <a href="about.html">About</a>&nbsp;
+                <a href="howto.html">How To</a>&nbsp;
+                <a href="FAQ.html">FAQs</a>&nbsp;
+                <a href="contact.html">Contact</a>&nbsp;
+            </nav>
+            <main id="content">
+            <h2>FAQs</h2>
+            <section class="faq">
+                <button class= "collapsible">Why is brushing and flossing important?</button>
+                <div class="content">
+                    <p>Brushing and flossing help remove plaque and food particles from your teeth, preventing cavities and gum disease.</p>
+                </div>
+
+                <button class= "collapsible">How often should I brush my teeth?</button>
+                <div class="content">
+                    <p>You should brush your teeth at least twice a day, ideally in the morning and before bedtime.</p>
+                </div>
+
+                <button class= "collapsible">How often should I floss?</button>
+                <div class="content">
+                    <p>Flossing should be done at least once a day, preferrably at night, to clean between your teeth where a toothbrush can't reach.</p>
+
+                </div>
+                <button class= "collapsible">What type of toothbrush is best?</button>
+                <div class="content">
+                    <p>A soft-bristled toothbrush is recommended to effectively clean your teeth without damaging your gums.</p>
+                </div>
+
+                <button class= "collapsible">What kind of toothpaste should I use?</button>
+                <div class="content">
+                    <p>Use a fluoride toothpaste to help strengthen your tooth enamel and prevent cavities.</p>
+                    <p>For children who have trouble spitting, use the amount of a grain of rice. This amount of flouride is safe to swallow.</p>
+                </div>
+            </section>
+        </main>
+       
+            <footer>
+                <i>&copy; 2025 SmileSchool<br>
+                <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a></i>
+            </footer>
+        </div>
+
+        <script>
+        const collapsibles = document.querySelectorAll(".collapsible");
+        collapsibles.forEach(button => {
+            button.addEventListener("click", () => {
+                button.classList.toggle("active");
+                const content = button.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+            });
+</script>
+    </body>
+    </html>
+
+            
+     
