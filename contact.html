@@ -3,6 +3,8 @@
     <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" 
+        content="Contact Smile School to share your feedback and suggestions about our dental hygiene website for kids. We value your input!">
         <title>Capstone Project Contact</title>
 	<link href="project.css" rel= "stylesheet">
 
@@ -18,6 +20,7 @@
                 <a href="about.html">About</a>&nbsp;
                 <a href="howto.html">How To</a>&nbsp;
                 <a href="FAQ.html">FAQs</a>&nbsp;
+                <a href="game.html">Game</a>&nbsp;
                 <a href="contact.html">Contact</a>&nbsp;
 
             </nav>
@@ -26,7 +29,7 @@
 <h2>Share your smile!</h2>
 <p>What did you like about Smile School? Tell us how we can make learning about brushing and flossing even more fun!</p>
 
-<form action="https://webdevbasics.net/scripts/demo.php" method="post">
+<form id="contactForm" action="https://webdevbasics.net/scripts/demo.php" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -54,5 +57,30 @@
             </footer>
         </div>
     </body>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit",function(event){
+            let isValid=true;
+            const name=document.getElementById("name").value.trim();
+            if(name.length < 2){
+                alert("please enter a valid name");
+                isValid=false; 
+            }
+            const email=document.getElementById("email").value.trim();
+            const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!email.match(emailPattern)){ 
+                alert("please enter a valid email address");
+                isValid=false;  
+            }
+            const comments=document.getElementById("comments").value.trim();
+            if(comments.length < 10){
+                alert("please enter comments of at least 10 characters");
+                isValid=false;  
+            }
+            if(!isValid){
+                event.preventDefault(); 
+            }
+        });
+        
+    </script>
     </html>
 

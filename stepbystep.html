@@ -3,6 +3,8 @@
     <head>
         <title>Capstone Project Step by Step</title>
         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Follow this step-by-step guide to learn the best techniques for brushing and flossing your teeth properly.">
 	<link href="project.css" rel= "stylesheet">
 
     </head>
@@ -17,6 +19,7 @@
                 <a href="about.html">About</a>&nbsp;
                 <a href="howto.html">How To</a>&nbsp;
                 <a href="FAQ.html">FAQs</a>&nbsp;
+                <a href="game.html">Game</a>&nbsp;
                 <a href="contact.html">Contact</a>&nbsp;
             </nav>
 
@@ -34,6 +37,10 @@
             <main id="content">
                 <h2>How to Brush and Floss Your Teeth</h2>
                 <h3>Brushing Your Teeth</h3>
+                <p id="extra" style="display:none;">
+                    Brushing too hard can damage your gums. Use gentle pressure and let the bristles do the work!
+                </p>
+                <button id="toggle" class="toggle-button">Helpful Tip</button>
                   <div id="right">
                 <img src="toothbrushing.png" alt="A tooth being brushed">
                 </div> 
@@ -46,6 +53,10 @@
                     <li>Brush for at least two minutes, twice a day.</li>
                 </ol>
                 <h3>Flossing Your Teeth</h3>
+                <p id="extra2" style="display:none;">
+                    Flossing helps remove plaque between your teeth where brushes can’t reach.
+                </p>
+                <button id="toggle2" class="toggle-button">Helpful Tip</button>
                 <ol>
                     <li>Use about 18 inches of floss, winding most of it around your middle fingers.</li>
                     <li>Hold the floss tightly between your thumbs and forefingers.</li>
@@ -61,5 +72,23 @@
                     <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a></i>
                 </footer>
             </div>
+            <script>
+            function setupToggle(extraId, buttonId) {
+                const extra = document.getElementById(extraId);
+                const button = document.getElementById(buttonId);
+                
+                button.onclick = function () {
+                    if (extra.style.display === "none") {
+                        extra.style.display = "block";
+                        button.textContent = "Show Less";
+                    } else {
+                        extra.style.display = "none";
+                        button.textContent = "Helpful Tip";
+                    }
+                };
+            }
+            setupToggle("extra", "toggle");
+            setupToggle("extra2", "toggle2");
+            </script>
         </body>
         </html>
